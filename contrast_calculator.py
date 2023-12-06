@@ -12,5 +12,5 @@ def load_image(filename):
     return img
 
 def convert_gray(img):
-    img = cv.cvtColor(img, img, cv.COLOR_RGB2GRAY)
+    img = cv.cvtColor(img, 7, img, 0) 
     return img
