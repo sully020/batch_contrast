@@ -16,3 +16,14 @@ def load_image(filename):
 def convert_gray(img):
     img = cv.cvtColor(img, 7, img, 0) 
     return img
+
+def find_intensities(img):
+    min = img.min()
+    max = img.max()
+    print(min)
+    print(max)
+    return min, max
+
+
+img = load_image("solid.jpg")
+find_intensities(img)
