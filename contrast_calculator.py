@@ -8,4 +8,9 @@ This script loads in image files and calculates their respective contrast ratios
 import cv2 as cv
 
 def load_image(filename):
-    pass
+    img = cv.imread(filename)
+    return img
+
+def convert_gray(img):
+    img = cv.cvtColor(img, img, cv.COLOR_RGB2GRAY)
+    return img
