@@ -20,6 +20,4 @@ def convert_gray(img):
 def find_intensities(img):
     min = img.min()
     max = img.max()
-    print(min)
-    print(max)
     return (min, max)
