@@ -21,3 +21,11 @@ def find_intensities(img):
     min = img.min()
     max = img.max()
     return (min, max)
+
+def calc_by_range():
+    img = load_image('solid.jpg')
+    light_vals = find_intensities(img)
+    contrast = (light_vals[1] - light_vals[0])
+    return contrast
+
+print(calc_by_range())
