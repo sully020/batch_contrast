@@ -1,11 +1,11 @@
 import contrast_calculator as cc
 import cv2 as cv
 
-def print_image():
+def print_sample():
     img = cc.load_image("sample.jpg")
     print(img)
 
-def print_gray():
+def print_solid():
     img = cc.load_image("sample.jpg")
     img = cc.convert_gray(img)
     print(img)
@@ -26,8 +26,8 @@ def compare_outputs():
 
     assert(sam_vals != sol_vals)
 
-print_image()
-print_gray()
+print_sample()
+print_solid()
 
 find_sample_intens()
 find_solid_intens()
