@@ -8,6 +8,7 @@ then calculating contrast values through both luminescence range and standard lu
 """
 
 import cv2 as cv
+from numpy import std
 
 def load_image(filename):
     img = cv.imread(filename)
