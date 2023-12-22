@@ -42,5 +42,3 @@ def iter_dir():
         img_dat = convert_gray(img_dat)
         print(calc_by_range(img_dat))
         print(calc_by_sd(img_dat))
-
-iter_dir()
