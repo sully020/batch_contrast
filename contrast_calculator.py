@@ -28,4 +28,3 @@ def calc_by_range():
     contrast = (light_vals[1] - light_vals[0])
     return contrast
 
-print(calc_by_range())
