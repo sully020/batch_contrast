@@ -18,6 +18,13 @@ def find_solid_intens():
     img = cc.load_image("solid.jpg")
     print(cc.find_intensities(img))
 
+def compare_outputs():
+    sample = cc.load_image("sample.jpg")
+    sam_vals = cc.find_intensities(sample)
+    solid = cc.load_image("solid.jpg")
+    sol_vals = cc.find_intensities(solid)
+
+    assert(sam_vals != sol_vals)
 
 print_image()
 print_gray()
@@ -25,3 +32,4 @@ print_gray()
 find_sample_intens()
 find_solid_intens()
 
+compare_outputs()
