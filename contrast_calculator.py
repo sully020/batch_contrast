@@ -29,3 +29,8 @@ def calc_by_range():
     contrast = (light_vals[1] - light_vals[0])
     return contrast
 
+def calc_by_sd():
+    img = load_image('sample.jpg')
+    sd = std(img)
+    sd = float("{:.2f}".format(sd))
+    return sd
