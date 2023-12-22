@@ -22,8 +22,4 @@ def find_intensities(img):
     max = img.max()
     print(min)
     print(max)
-    return min, max
-
-
-img = load_image("solid.jpg")
-find_intensities(img)
+    return (min, max)
