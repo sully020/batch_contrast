@@ -11,23 +11,22 @@ import cv2 as cv
 from numpy import std
 from os import listdir
 
-def load_image(filename):
-    img = cv.imread(filename)
-    return img
 
 def convert_gray(img):
     img = cv.cvtColor(img, 7, img, 0) 
     return img
 
-def find_intensities(img):
+def load_image(filename):
+    img = cv.imread(filename)
+    img = convert_gray(img)
+    return img
+
+def calc_range(img):
     min = img.min()
     max = img.max()
-    return (min, max)
-
-def calc_by_range(img):
-    light_vals = find_intensities(img)
-    contrast = (light_vals[1] - light_vals[0])
-    return contrast
+    if min == 0:
+        min += 1
+    return (str(max) + ": " + str(min))
 
 def calc_by_sd(img):
     sd = std(img)
@@ -39,6 +38,14 @@ def iter_dir():
     for img in listdir(dir):
         fname = dir + '/' + img
         img_dat = load_image(fname)
-        img_dat = convert_gray(img_dat)
-        print(calc_by_range(img_dat))
-        print(calc_by_sd(img_dat))
+        print("Contrast by Range - " + img + ": " + calc_range(img_dat))
+        print("Contrast by Standard Deviation - " + img + ": " + str(calc_by_sd(img_dat)))
+        print("----------------")
+
+def main():
+    iter_dir()
+
+if __name__ == "__main__":
+    main()
+
+

@@ -1,39 +1,33 @@
 import contrast_calculator as cc
 
-def print_sample():
+def print_sample_dat():
     img = cc.load_image("images/sample.jpg")
-    img = cc.convert_gray(img)
     print(img)
 
-def print_solid():
-    img = cc.load_image("images/sample.jpg")
-    img = cc.convert_gray(img)
-    print(img)
-
-def find_sample_intens():
-    img = cc.load_image("images/sample.jpg")
-    img = cc.convert_gray(img)
-    print(cc.find_intensities(img))
-
-def find_solid_intens():
+def print_solid_dat():
     img = cc.load_image("images/solid.jpg")
-    img = cc.convert_gray(img)
-    print(cc.find_intensities(img))
+    print(img)
 
-def compare_outputs():
+def test_range():
+    img = cc.load_image("images/sample.jpg")
+    print(cc.calc_range(img))
+
+def test_sd():
+    img = cc.load_image("images/solid.jpg")
+    print(cc.calc_by_sd(img))
+
+def compare_diff_images():
     sample = cc.load_image("images/sample.jpg")
-    sample = cc.convert_gray(sample)
-    sam_vals = cc.find_intensities(sample)
+    sam_vals = cc.calc_range(sample)
     solid = cc.load_image("images/solid.jpg")
-    solid = cc.convert_gray(solid)
-    sol_vals = cc.find_intensities(solid)
+    sol_vals = cc.calc_range(solid)
 
     assert(sam_vals != sol_vals)
 
-print_sample()
-print_solid()
+print_sample_dat()
+print_solid_dat()
 
-find_sample_intens()
-find_solid_intens()
+test_range()
+test_sd()
 
-compare_outputs()
+compare_diff_images()
