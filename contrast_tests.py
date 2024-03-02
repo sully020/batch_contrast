@@ -11,9 +11,13 @@ def print_solid_dat():
 def test_range():
     img = cc.load_image("images/sample.jpg")
     print(cc.calc_range(img))
+    img = cc.load_image("images/solid.jpg")
+    print(cc.calc_range(img))
 
 def test_sd():
     img = cc.load_image("images/solid.jpg")
+    print(cc.calc_by_sd(img))
+    img = cc.load_image("images/sample.jpg")
     print(cc.calc_by_sd(img))
 
 def compare_diff_images():
