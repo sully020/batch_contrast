@@ -1,4 +1,5 @@
 import contrast_calculator as cc
+from time import time
 
 def print_sample_dat():
     img = cc.load_image("images/sample.jpg")
@@ -28,10 +29,18 @@ def compare_diff_images():
 
     assert(sam_vals != sol_vals)
 
-print_sample_dat()
-print_solid_dat()
+def time_iter_dir():
+    dir = input('Please enter directory name/path: ')
+    start = (time() * 1000) // 1
+    cc.iter_dir(dir)
+    end = (time() * 1000) // 1
+    print(str(end - start) + "ms")
 
-test_range()
-test_sd()
+#print_sample_dat()
+#print_solid_dat()
 
-compare_diff_images()
+#test_range()
+#test_sd()
+
+#compare_diff_images()
+time_iter_dir()
